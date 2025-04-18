@@ -1,20 +1,110 @@
 # bmi
+# BMI Tracker App 📊
 
-A new Flutter project.
+A multi-language Flutter application for calculating and tracking BMI metrics with Firebase integration.
 
-## Getting Started
+![App Screenshots](BMI_home-1.png) <!-- Replace with actual screenshot collage -->
 
-This project is a starting point for a Flutter application.
+## Features ✨
+- **BMI Calculation**: Instant BMI computation using weight/height inputs
+- **Multi-language Support**: English/French/Arabic localization
+- **Firebase Integration**:
+  - User authentication (Login/Register)
+  - Cloud Firestore for BMI history storage
+- **History Tracking**: View previous BMI measurements with timestamps
+- **User Profile**: Email display and quick access to history
+- **Responsive UI**: Adaptive layout for various screen sizes
 
-A few resources to get you started if this is your first Flutter project:
+## Prerequisites 📋
+- **Dart SDK** (>=2.19.6)
+- **Flutter Framework** (>=3.7.0)
+- **Android Studio** (or VS Code with Flutter extension)
+- **Git Version Control**
+- **Firebase Account** (for backend services)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Installation 🛠️
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Firebase Setup
+1. Create Firebase project at [console.firebase.google.com](https://console.firebase.google.com/)
+2. Enable Authentication (Email/Password) and Firestore Database
+3. Add Android/iOS apps and download `google-services.json`/`GoogleService-Info.plist`
+4. Place config files in respective platform folders
+
+### Local Setup
+
+#git clone https://github.com/your-username/bmi_tracker_app.git
+#cd bmi_tracker_app
+#flutter pub get
+#flutter run
+
+## Project Structure 📂
+bmi_tracker_app/
+├── android/
+├── ios/
+├── lib/
+│   ├── firebase_options.dart        # Firebase config (auto-generated)
+│   ├── main.dart                    # Main app entry point
+│   ├── auth_service.dart            # Auth logic (login, register, logout)
+│
+│   ├── models/
+│   │   └── bmi_record.dart          # BMI record model (optional if needed)
+│
+│   ├── screens/
+│   │   ├── login_page.dart          # Login UI
+│   │   ├── register_page.dart       # Register UI
+│   │   ├── home_page.dart           # Main BMI calculator
+│   │   ├── history_page.dart        # BMI history list
+│   │   └── profile_page.dart        # Profile page with logout, history link
+│
+│   ├── widgets/
+│   │   └── language_selector.dart   # Dropdown for language change
+│
+│   ├── l10n/
+│   │   ├── app_en.arb               # English translations
+│   │   ├── app_fr.arb               # French translations
+│   │   ├── app_ar.arb               # Arabic translations
+│   │   └── app_localizations.dart   # Generated file by Flutter intl
+│
+│   └── utils/
+│       └── bmi_utils.dart           # BMI calculation helper functions (optional)
+│
+├── test/
+│   └── widget_test.dart             # Default widget test (can add more)
+│
+├── pubspec.yaml                     # Dependencies and assets
+├── pubspec.lock                     # Locked dependencies
+├── README.md                        # Project description and setup
+├── .gitignore                       # Ignore build/.dart_tool/etc.
+├── .metadata
+├── analysis_options.yaml            # Linting rules (optional)
+└── .vscode/ or .idea/               # Editor-specific configs (optional)
+
+## Usage 🚀
+  1-Registration: Create new account via Register screen
+  2-BMI Calculation:
+    **Enter weight (kg) and height (cm)**
+    **Tap "Calculate" to get BMI result**
+  3-History Tracking:
+    **View previous calculations with dates**
+    **BMI categories indicated by color coding**
+  4-Language Switching:
+    **Use dropdown to select preferred language**
+
+## Development Commands 💻
+# Run in debug mode
+flutter run
+
+# Generate localization files
+flutter gen-l10n
+
+# Run tests
+flutter test
+
+# Build APK
+flutter build apk --release
+## BMI Diagramme de sequence
 ![BMI Diagramme de sequence](https://github.com/user-attachments/assets/cd9f25bc-0f39-44ef-bcc9-39657ef81881)
+## Screens
 ![BMI_login](https://github.com/user-attachments/assets/e5ee07ca-e864-4566-9546-60868c92b180)
 ![BMI_Register](https://github.com/user-attachments/assets/6feb40b8-fe07-45b9-9fc2-c95d591e0305)
 ![BMI_home-1](https://github.com/user-attachments/assets/c59e08d0-1a8a-48d4-a2f7-3ec3a79d764d)
